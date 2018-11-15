@@ -42,7 +42,7 @@ class TodoListService {
 		}
 	}
 
-	Future<Todo> delete(int id) async {
+	Future<void> delete(int id) async {
 		try {
 			final response = await _http.delete(_url + "/delete?id=" + id.toString(),
 					headers: _headers);
