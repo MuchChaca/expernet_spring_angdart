@@ -52,6 +52,16 @@ class TodoListService {
 		}
 	}
 
+  Future<void> doneIt(Todo todo) async {
+    try {
+      await _http.put(_url + "/done",
+        headers: _headers, body: json.encode(todo.toJson()));
+
+    } catch (e) {
+      throw _handleError(e);
+    }
+  }
+
 	Exception _handleError(dynamic e) {
 		print(e); // for demo purposes only
 		return Exception('Server error; cause: $e');
