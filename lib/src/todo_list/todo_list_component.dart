@@ -44,4 +44,10 @@ class TodoListComponent implements OnInit {
 		await todoListService.delete(items.elementAt(index).id);
 		return items.removeAt(index);
 	}
+
+  void doneIt(int index) async {
+    Todo todo = items.elementAt(index);
+    todo.isDone = !todo.isDone;
+    await todoListService.doneIt(todo);
+  }
 }
