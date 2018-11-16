@@ -1,5 +1,7 @@
 language: dart
+
 dart_task:
-- test: --platform vm
-- test: --platform chrome
-- dartfmt: true
+  - test: --platform vm
+
+notifications:
+  email: false
