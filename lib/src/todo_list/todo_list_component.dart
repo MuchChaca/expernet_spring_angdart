@@ -41,7 +41,7 @@ class TodoListComponent implements OnInit {
 	}
 
 	Future<Todo> remove(int index) async {
-		Todo resp = (await todoListService.delete(items.elementAt(index).id));
+		await todoListService.delete(items.elementAt(index).id);
 		return items.removeAt(index);
 	}
 }
